@@ -1,0 +1,28 @@
+
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+<form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th size="50px"><p style="font-size:400%;">Create new page</p></th>
+        </tr>
+        </table>
+        <div class="form-group" class="createbar">
+            <input autocomplete="off" autofocus class="form-control" name="createform" placeholder="Title of the new page" type="text" style="width:900px;margin-top:30px;">
+        </div>
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="content" placeholder="Description" type="text" style="height:200px;width:900px;margin-top:30px">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Create</button>
+    
+</form>
+{% endblock %}
